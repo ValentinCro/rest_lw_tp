@@ -1,17 +1,15 @@
 package univ.rouen.controller;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- * Created by valentin on 4/18/16.
- */
-public class HomeController extends HttpServlet {
-    public void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
 
+@Controller
+public class HomeController {
+    @RequestMapping("/")
+    @ResponseBody
+    public String hi() {
+        return "Hello, world.";
     }
 }
